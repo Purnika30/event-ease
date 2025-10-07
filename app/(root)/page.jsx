@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
               <Mountain className="h-8 w-8 text-white" />
-              <span className="ml-2 text-white text-xl font-bold">BackpackBuddy</span>
+              <span className="ml-2 text-white text-xl font-bold">Event Ease</span>
             </div>
             
             {/* Desktop Navigation */}
