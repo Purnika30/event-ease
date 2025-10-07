@@ -89,25 +89,25 @@ export default function Home() {
         <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Pack Your Bags, Adventure Awaits: Travel Together, Pack Smarter!
+            Plan with breeze.
             </h1>
             <p className="text-xl sm:text-2xl text-gray-200 mb-12 max-w-2xl mx-auto">
             
-            Your Next Adventure Starts Here
+            Plan events faster, better and stress-free
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
                 Start Planning
                 <ArrowRight className="h-5 w-5" />
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all">
+              {/* <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all">
                 Explore Destinations
-              </button>
+              </button> */}
             </div>
           </div>
 
           {/* Stats */}
-          <div className="absolute bottom-12 left-0 right-0">
+          {/* <div className="absolute bottom-12 left-0 right-0">
             <div className="flex justify-center gap-8 sm:gap-16 text-white text-center">
               <div>
                 <div className="text-3xl sm:text-4xl font-bold">500+</div>
@@ -122,7 +122,7 @@ export default function Home() {
                 <div className="text-sm sm:text-base mt-1">Adventure</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </main>
