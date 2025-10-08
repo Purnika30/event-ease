@@ -64,7 +64,7 @@ export default function Password() {
       <div className="w-full max-w-md px-6 py-8 relative z-10">
         <div className="flex items-center justify-center mb-6">
           <Mountain className="h-8 w-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mr-2" />
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">BackpackBuddy</h1>
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">EVENTEASE</h1>
         </div>
 
         <form
@@ -151,7 +151,7 @@ export default function Password() {
               </>
             ) : (
               <>
-                <span>Start Your Journey</span>
+                <span>Start Your Planning </span>
                 <ArrowRight className="h-5 w-5" />
               </>
             )}

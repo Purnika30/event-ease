@@ -181,7 +181,7 @@ export default function Dashboard() {
         <div className="flex items-center">
           <Mountain className="h-8 w-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mr-2" />
           <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-            BackpackBuddy
+            EVENTEASE
           </h1>
         </div>
         <div className="flex space-x-6">
@@ -213,7 +213,7 @@ export default function Dashboard() {
             <div className="flex items-center mb-2">
               <Compass className="h-6 w-6 text-[#818CF8] mr-3" />
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                Upcoming Trips
+                Upcoming Events
               </h3>
             </div>
             <p className="text-4xl font-bold text-[#CBD5E1]">{events?.length}</p>
@@ -222,7 +222,7 @@ export default function Dashboard() {
             <div className="flex items-center mb-2">
               <Calendar className="h-6 w-6 text-[#818CF8] mr-3" />
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                Next Trip
+                Next Event
               </h3>
             </div>
             <p className="text-lg text-[#CBD5E1]">
@@ -232,33 +232,34 @@ export default function Dashboard() {
                     month: "short",
                     year: "numeric",
                   })
-                : "No trips scheduled"}
+                : "No events scheduled"}
             </p>
           </div>
           <div className="bg-gradient-to-br from-[#1E293B]/90 via-[#1E203A]/90 to-[#1E293B]/90 backdrop-blur-lg p-6 rounded-xl shadow-md border border-[#334155]/50 hover:border-[#6366F1]/70 transition-all duration-500 hover:shadow-[0_10px_30px_-5px_rgba(99,102,241,0.3)] transform hover:-translate-y-1">
             <div className="flex items-center mb-2">
               <MapPin className="h-6 w-6 text-[#818CF8] mr-3" />
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                Popular Destination
+                Total Events
               </h3>
             </div>
-            <p className="text-lg">
+            <p className="text-lg text-[#CBD5E1] ">
               {(events && events[0]?.destination) || "Not available"}
             </p>
           </div>
         </div>
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
+        {/* <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
           Yourr Overall Trip Details
         </h2>
-        <Example data={chartData} />
+        <Example data={chartData} /> */}
         <div className="flex justify-between items-center mb-8">
+          
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-            Upcoming Trips and Events
+            Upcoming Events
           </h2>
           <Link href="/dashboard/createnew">
             <button className="bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#8B5CF6] hover:from-[#4338CA] hover:via-[#5B5EF0] hover:to-[#7E4DF0] text-white px-6 py-3 rounded-xl flex items-center shadow-lg hover:shadow-xl hover:shadow-[#6366F1]/30 transition-all duration-500">
               <Plus className="h-5 w-5 mr-2" />
-              <span>Create Trip</span>
+              <span>Create Event</span>
             </button>
           </Link>
         </div>
@@ -328,15 +329,15 @@ export default function Dashboard() {
         ) : (
           <div className="bg-gradient-to-br from-[#1E293B]/90 via-[#1E203A]/90 to-[#1E293B]/90 backdrop-blur-lg p-8 rounded-xl text-center border border-[#334155]/50 hover:border-[#6366F1]/70 transition-all duration-500 hover:shadow-[0_10px_30px_-5px_rgba(99,102,241,0.3)]">
             <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-2">
-              No upcoming trips
+              No Upcoming Events
             </h3>
             <p className="text-[#CBD5E1] mb-4">
-              Start planning your next adventure!
+              Start planning your next event!
             </p>
             <Link href="/create-trip">
               <button className="bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#8B5CF6] hover:from-[#4338CA] hover:via-[#5B5EF0] hover:to-[#7E4DF0] text-white px-6 py-3 rounded-xl flex items-center mx-auto transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-[#6366F1]/30">
                 <Plus className="h-5 w-5 mr-2" />
-                <span>Create Your First Trip</span>
+                <span>Create Your First Event</span>
               </button>
             </Link>
           </div>
@@ -359,11 +360,11 @@ export default function Dashboard() {
           <div className="flex items-center mb-4 md:mb-0">
             <Mountain className="h-6 w-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mr-2" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 font-bold">
-              BackpackBuddy
+              Eventease
             </span>
           </div>
           <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#64748B] via-[#94A3B8] to-[#64748B] text-sm animate-text-pulse">
-            © {new Date().getFullYear()} BackpackBuddy. All rights reserved.
+            © {new Date().getFullYear()} Eventease. All rights reserved.
           </div>
         </div>
       </footer>

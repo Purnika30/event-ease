@@ -76,14 +76,14 @@ export default function CreateTrip() {
       });
       const data = await res.json();
       if (res.status && data.success) {
-        alert("Trip created successfully!");
+        alert("Event created successfully!");
         console.log(data);
         router.push(`/dashboard/${data.trip._id}`);
       } else {
-        alert("Failed to create trip.");
+        alert("Failed to create event.");
       }
     } catch (error) {
-      console.error("Error creating trip:", error);
+      console.error("Error creating event:", error);
     }
   };
 
@@ -120,7 +120,7 @@ export default function CreateTrip() {
       });
       const data = await res.json();
       if (res.status && data.success) {
-        alert("Trip created successfully!");
+        alert("Event created successfully!");
         console.log(data);
         // router.push(`/dashboard/${data.trip._id}`);
         const response = await fetch("/api/geminiChecklist", {
@@ -157,7 +157,7 @@ export default function CreateTrip() {
               name: itemName,
               category: category,
               tripId: data.trip._id,
-              status: "to pack",
+              status: "to do",
               assignedTo: "",
               // userRole: "",
             };
@@ -176,12 +176,12 @@ export default function CreateTrip() {
         console.log("All AI-generated items saved to DB.");
         router.push(`/dashboard/${data.trip._id}`);
       } else {
-        alert("Failed to create trip.");
+        alert("Failed to create event.");
       }
 
       
     } catch (error) {
-      console.error("Error creating trip:", error);
+      console.error("Error creating event:", error);
     }
     
   }
@@ -199,7 +199,7 @@ export default function CreateTrip() {
         <div className="flex items-center">
           <Mountain className="h-8 w-8 text-[#CBD5E1] mr-2" />
           <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-            BackpackBuddy
+            EVENTEASE
           </h1>
         </div>
         <div className="flex space-x-4">
@@ -207,7 +207,7 @@ export default function CreateTrip() {
             Dashboard
           </button>
           <button className="px-4 py-2 text-[#CBD5E1] hover:text-[#818CF8] transition-colors" onClick={()=>router.push('/dashboard')}>
-            My Trips
+            My Events
           </button>
           <button className="px-4 py-2 text-[#CBD5E1] hover:text-[#818CF8] transition-colors" onClick={()=>{
             localStorage.removeItem('user')
@@ -222,10 +222,10 @@ export default function CreateTrip() {
       <main className="container mx-auto px-4 py-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-2">
-            Create New Trip
+            Create New Event
           </h2>
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#64748B] via-[#94A3B8] to-[#64748B] text-sm animate-text-pulse mb-8">
-            Plan your next adventure with BackpackBuddy
+            Plan your next Event with Eventease
           </p>
 
           <form
@@ -236,7 +236,7 @@ export default function CreateTrip() {
               {/* Trip Name */}
               <div className="col-span-full">
                 <label className="block mb-2 text-sm font-medium text-[#CBD5E1]">
-                  Trip Name
+                  Event Name
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -246,7 +246,7 @@ export default function CreateTrip() {
                     type="text"
                     value={tripName}
                     onChange={(e) => setTripName(e.target.value)}
-                    placeholder="Summer Hiking Adventure"
+                    placeholder="Tic-Tech-Toe hackathon"
                     className="w-full p-3 pl-10 bg-gradient-to-b from-[#1E293B] to-[#1E203A] text-[#CBD5E1] border border-[#334155] rounded-xl focus:outline-none focus:border-[#818CF8] focus:ring-2 focus:ring-[#818CF8]/50 placeholder:text-[#64748B]"
                     required
                   />
@@ -297,7 +297,7 @@ export default function CreateTrip() {
               {/* Destination */}
               <div className="col-span-full">
                 <label className="block mb-2 text-sm font-medium text-[#CBD5E1]">
-                  Destination
+                  Event Venue
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -307,7 +307,7 @@ export default function CreateTrip() {
                     type="text"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    placeholder="Rocky Mountains, Colorado"
+                    placeholder="Nirma university"
                     className="w-full p-3 pl-10 bg-gradient-to-b from-[#1E293B] to-[#1E203A] text-[#CBD5E1] border border-[#334155] rounded-xl focus:outline-none focus:border-[#818CF8] focus:ring-2 focus:ring-[#818CF8]/50 placeholder:text-[#64748B]"
                     required
                   />
@@ -315,9 +315,9 @@ export default function CreateTrip() {
               </div>
 
               {/* Type Dropdown */}
-              <div>
+              {/* <div>
                 <label className="block mb-2 text-sm font-medium text-[#CBD5E1]">
-                  Trip Type
+                  Event Type
                 </label>
                 <div className="relative">
                   <button
@@ -347,10 +347,10 @@ export default function CreateTrip() {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> */}
 
               {/* Category Dropdown */}
-              <div>
+              {/* <div>
                 <label className="block mb-2 text-sm font-medium text-[#CBD5E1]">
                   Trip Category
                 </label>
@@ -382,7 +382,7 @@ export default function CreateTrip() {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Action Buttons */}
@@ -391,7 +391,7 @@ export default function CreateTrip() {
                 type="submit"
                 className="flex-1 bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#8B5CF6] text-white py-3 px-6 rounded-xl hover:from-[#4338CA] hover:via-[#5B5EF0] hover:to-[#7E4DF0] transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-[#6366F1]/30 flex items-center justify-center group"
               >
-                <span>Create Trip</span>
+                <span>Create Event</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -413,10 +413,10 @@ export default function CreateTrip() {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
             <Mountain className="h-6 w-6 text-[#CBD5E1] mr-2" />
-            <span className="text-[#CBD5E1] font-bold">BackpackBuddy</span>
+            <span className="text-[#CBD5E1] font-bold">EVENTEASE</span>
           </div>
           <div className="text-[#CBD5E1] text-sm">
-            © {new Date().getFullYear()} BackpackBuddy. All rights reserved.
+            © {new Date().getFullYear()} EVENTEASE. All rights reserved.
           </div>
         </div>
       </footer>

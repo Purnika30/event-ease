@@ -14,7 +14,7 @@ export default function TripDashboard() {
   const [people, setPeople] = useState([])
   const [totalUsers, setTotalUsers] = useState([])
   const [myTasksOnly, setMyTasksOnly] = useState(false)
-  const statusOptions = ["To Pack", "Packed", "Delivered"]
+  const statusOptions = ["To do", "Done", "Delivered"]
   const [tripDe, setTripDetails] = useState("")
   const [newItem, setNewItem] = useState({
     itemName: "",
@@ -259,7 +259,7 @@ export default function TripDashboard() {
             <div className="flex items-center">
               <Mountain className="h-8 w-8 text-[#CBD5E1] mr-2" />
               <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                BackpackBuddy
+                Eventease
               </h1>
             </div>
             <div className="flex space-x-4">
@@ -267,7 +267,7 @@ export default function TripDashboard() {
                 Dashboard
               </button>
               <button className="px-4 py-2 text-[#CBD5E1] hover:text-[#818CF8] transition-colors" onClick={()=>router.push('/dashboard')}>
-                My Trips
+                My Events
               </button>
               <button className="px-4 py-2 text-[#CBD5E1] hover:text-[#818CF8] transition-colors" onClick={()=>{
                 localStorage.removeItem('user')
@@ -282,8 +282,8 @@ export default function TripDashboard() {
         <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
           Trip/Event Dashboard - {tripDe ? tripDe?.name : id}
         </h1>
-        <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#64748B] via-[#94A3B8] to-[#64748B] text-sm animate-text-pulse">
-          Manage your trip tasks and collaborators
+        <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#64748B] via-[#94A3B8] to-[#64748B] text-l animate-text-pulse">
+          Manage your Event tasks and collaborators
         </p>
 
         {/* Action Buttons */}
@@ -292,7 +292,7 @@ export default function TripDashboard() {
             onClick={() => setIsItemModalOpen(true)}
             className="bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#8B5CF6] text-white px-4 py-2 rounded-xl hover:from-[#4338CA] hover:via-[#5B5EF0] hover:to-[#7E4DF0] transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-[#6366F1]/30"
           >
-            Add Item
+            Add task
           </button>
           <button
             onClick={() => setIsPeopleModalOpen(true)}
@@ -310,7 +310,7 @@ export default function TripDashboard() {
 
         {/* Collaborative Tasks */}
         <div>
-          <h2 className="text-xl font-semibold mb-4">Collaborative Tasks</h2>
+          <h2 className="text-xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#64748B] via-[#94A3B8] to-[#64748B] text-sm animate-text-pulse">Collaborative Tasks</h2>
           <div className="overflow-x-auto">
             {/* Group tasks by category */}
             {(() => {
@@ -472,18 +472,18 @@ export default function TripDashboard() {
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-              Add Item
+              Assign Task
             </h2>
             <input
               value={newItem.itemName}
               onChange={(e) => setNewItem({ ...newItem, itemName: e.target.value })}
-              placeholder="Item Name"
+              placeholder="Task"
               className="mb-2 w-full p-2 bg-gradient-to-b from-[#1E293B] to-[#1E203A] text-[#CBD5E1] border border-[#334155] rounded-xl focus:outline-none focus:border-[#818CF8] focus:ring-2 focus:ring-[#818CF8]/50 placeholder:text-[#64748B]"
             />
             <input
               value={newItem.category}
               onChange={(e) => setNewItem({ ...newItem, category: e.target.value })}
-              placeholder="Category Name"
+              placeholder="Category"
               className="mb-2 w-full p-2 bg-gradient-to-b from-[#1E293B] to-[#1E203A] text-[#CBD5E1] border border-[#334155] rounded-xl focus:outline-none focus:border-[#818CF8] focus:ring-2 focus:ring-[#818CF8]/50 placeholder:text-[#64748B]"
             />
             <Select
